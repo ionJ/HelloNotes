@@ -9,6 +9,8 @@ public class NotesDB extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME = "notes";  // 表名
     public static final String CONTENT = "content";   // 内容
+    public static final String PATH = "path";          // 图片
+    public static final String VIDEO = "video";     // 视频
     public static final String ID = "_id";          // id
     public static final String TIME = "time";    //创建时间
 
@@ -22,7 +24,10 @@ public class NotesDB extends SQLiteOpenHelper {
         // 创建新表 + （ID列 id为INTEGER 类型并且主键自增 + 内容列 内容为 TEXT 类型且不为空 + 时间列 时间为 TEXT 类型且不为空）
         db.execSQL("CREATE TABLE " + TABLE_NAME + "(" + ID
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + CONTENT
-                + " TEXT NOT NULL," + TIME + " TEXT NOT NULL)");
+                + " TEXT NOT NULL," + PATH + " TEXT NOT NULL,"
+                + VIDEO + " TEXT NOT NULL"
+                + TIME + " TEXT NOT NULL)"
+        );
     }
 
     @Override
